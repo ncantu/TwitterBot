@@ -1,0 +1,189 @@
+{
+	"consumerKey": "",
+	"consumerSecret": "",
+	"oauthToken": "",
+	"oauthTokenSecret": "",
+	"score":{
+		"tweet":{
+			"retweeted": -20,
+			"inReplyToUserId": -30,
+			"retweetedCountSup10": 20,
+			"favorited": 30,
+			"liked": 4,
+			"ratioList":{
+				"user":2,
+				"hashtagList":5,
+				"tweet":10
+			}
+		},
+		"user":{
+			"following": -1
+		},
+	},
+	"hashTagSearchedList":{
+		"iot":{
+			"id":"iot",
+			"hashTagList":{
+			  "iot":10
+			}
+		},
+		"cybersecurity":{
+			"id":"cybersecurity",
+			"hashTagList":{
+			  "cybersecurity":1,
+			  "security":1,
+			  "infosec":1
+			}
+		},
+		"anonymous":{
+			"id":"anonymous",
+			"scoreTagSearched": 1,
+			"hashTagList":{
+			  "anonymous":1,
+			  "ANONFAMILY":1
+			}
+		},
+		"neo4j":{
+			"id":"neo4j",
+			"hashTagList":{
+			  "neo4j":20,
+			  "graph":40,
+			  "bigdata":7,
+			  "datascience":7
+			}
+		},
+		"Startup":{
+			"id":"Startup",
+			"hashTagList":{
+			  "Startup":5,
+			  "cxo":5,
+			  "cio":5,
+			  "cto":10,
+			  "Digitalization":2,
+			  "JavaScript":1, 
+			  "hackers":5,
+			  "skills":1,
+			  "Technology":1,
+			  "crowfounding":5,
+			  "growthacker":5,
+			  "venture":10
+			}
+		},
+		"ia":{
+			"id":"ia",
+			"hashTagList":{
+			  "ai":10,
+			  "ia":10,
+			  "intelligence":1
+			}
+		},
+		"blockchain":{
+			"id":"blockchain",
+			"hashTagList":{
+			  "blockchain":20
+			}
+		}
+	},
+	"nbPerHourList":{
+		"h00":{
+			"hour": "00",
+			"nbPerHour": 100
+		},
+		"h01":{
+			"hour": "01",
+			"nbPerHour": 100
+		},
+		"h02":{
+			"hour": "02",
+			"nbPerHour": 40
+		},
+		"h03":{
+			"hour": "03",
+			"nbPerHour": 40
+		},
+		"h04":{
+			"hour": "04",
+			"nbPerHour": 40
+		},
+		"h05":{
+			"hour": "05",
+			"nbPerHour": 40
+		},
+		"h06":{
+			"hour": "06",
+			"nbPerHour": 100
+		},
+		"h07":{
+			"hour": "07",
+			"nbPerHour": 200
+		},
+		"h08":{
+			"hour": "08",
+			"nbPerHour": 200
+		},
+		"h09":{
+			"hour": "09",
+			"nbPerHour": 200
+		},
+		"h10":{
+			"hour": "10",
+			"nbPerHour": 200
+		},
+		"h11":{
+			"hour": "11",
+			"nbPerHour": 60
+		},
+		"h12":{
+			"hour": "12",
+			"nbPerHour": 200
+		},
+		"h13":{
+			"hour": "13",
+			"nbPerHour": 200
+		},
+		"h14":{
+			"hour": "14",
+			"nbPerHour": 60
+		},
+		"h15":{
+			"hour": "15",
+			"nbPerHour": 40
+		},
+		"h16":{
+			"hour": "16",
+			"nbPerHour": 40
+		},
+		"h17":{
+			"hour": "17",
+			"nbPerHour": 100
+		},
+		"h18":{
+			"hour": "18",
+			"nbPerHour": 200
+		},
+		"h19":{
+			"hour": "19",
+			"nbPerHour": 200
+		},
+		"h20":{
+			"hour": "20",
+			"nbPerHour": 200
+		},
+		"h21":{
+			"hour": "21",
+			"nbPerHour": 100
+		},
+		"h22":{
+			"hour": "22",
+			"nbPerHour": 60
+		},
+		"h23":{
+			"hour": "23",
+			"nbPerHour": 40
+		},
+		"h24":{
+			"hour": "24",
+			"nbPerHour": 40
+		}
+	}
+}
