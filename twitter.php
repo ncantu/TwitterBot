@@ -344,7 +344,7 @@ class TweetList {
 
 	public function renew($first = false, $tagS = array(), $tag = '{hashTag}') {
 
-		if($first !== true AND (empty($this->list) === false || $this->nbleft !== 0 || date('H', time()) === $this->hour)) {
+		if($first !== true AND (empty($this->list) === false || $this->nbleft !== 0)) {
 
 			sleep(60);
 
