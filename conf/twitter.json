@@ -82,6 +82,12 @@
 			"hashTagList":{
 			  "blockchain":20
 			}
+		},
+		"other":{
+			"id":"other",
+			"hashTagList":{
+			  "other":0
+			}
 		}
 	},
 	"nbPerHourList":{

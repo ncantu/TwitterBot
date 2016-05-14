@@ -5,9 +5,9 @@ trait Tdata {
 	private static $dirRoot = 'data/';
 	private static $ext     = '.json';
 
-	public $id;
+	public $id              = false;
 	public $type;
-	public $score = 0;
+	public $score           = 0;
 
 	public function __construct() {
 
@@ -41,13 +41,13 @@ trait Tdata {
 
 	public function save() {
 
-		$this->score();
 		$this->increment();
+		$this->score();
 
-		$file    = $this->exist();
+		$file    = $this->fileNameGet();
 		$content = json_encode($this);
 
-		return file_put_contents, content);
+		return file_put_contents($file, $content);
 	}
 
 	public function get() { 
@@ -77,7 +77,7 @@ trait Tdata {
 			
 		$this->count++;
 
-		return $this->count,
+		return $this->count;
 	}	
 }
 
@@ -86,12 +86,12 @@ class Tweet {
 	use Tdata;
 
 	public $user;
-	public $hashtagList              = array();
+	public $hashtagList  = array();
 	public $text;
-	public $retweeted                = false;	
-	public $favorited                = false;
-	public $inReply                  = false;
-	public $retweetCount             = 0;
+	public $retweeted    = false;	
+	public $favorited    = false;
+	public $inReply      = false;
+	public $retweetCount = 0;
 
 	public static function constructFromApi($tweeJson) {
 
@@ -175,15 +175,10 @@ class Tweet {
 		if($this->retweetCount > 10)  $this->score += TweetList::$scoreConf->tweet->retweetedCountSup10;
 		if($this->inReply === true)   $this->score += TweetList::$scoreConf->tweet->inReplyToUserId;
 
-		hashtagList
-
-		
-
 		foreach ($this->hashtagList as $hashtag) {
 
 			$hashtagScore += $hashtag->score;
 		}
-
 		$this->score  = $this->score * TweetList::$scoreConf->tweet->ratioList->tweet;
 		$this->score += $this->user->score * TweetList::$scoreConf->tweet->ratioList->user;		
 		$this->score += $hashtagScore * TweetList::$scoreConf->tweet->ratioList->hashtagList;
@@ -224,10 +219,18 @@ class HashTag {
 
 	use Tdata;
 
-	public static function constructFromApiTweet($tweeJsonHastagItem) {
+	public static function constructFromApiTweet($tweeJsonHastagItem, $default = 'other') {
 		
-		$tag      = new HashTag();
-		$tag->id  = $tweeJsonHastagItem;
+		$tag = new HashTag();
+
+		foreach(self::$hashTagSearchedList as $k => $v){
+
+			foreach($v->hashTagList as $k2 => $score){
+
+				if($k2 === $tweeJsonHastagItem) $tag->id = $k;
+			}
+		}
+		if($tag->id === false) $tag->id = $default;
 
 		$tag->save();
 
@@ -236,7 +239,14 @@ class HashTag {
 
 	private function score() {
 
+		foreach(self::$hashTagSearchedList as $k => $v){
 
+			foreach($v->hashTagList as $k2 => $score){
+
+				if($this->id === $k2) $this->score = $score;
+			}
+		}
+		return true;
 	}
 }
 
